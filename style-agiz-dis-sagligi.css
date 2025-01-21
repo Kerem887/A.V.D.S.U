@@ -1,0 +1,33 @@
+ /* Sekme başlıkları için stil */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ccc;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px 5px 0 0;
+            margin-right: 10px;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab.active {
+            background-color: #ddd;
+            border-bottom: 2px solid #fff;
+        }
+        
+        /* Sekme içerikleri için stil */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: #f9f9f9;
+            border-radius: 0 0 5px 5px;
+        }
+        .tab-content.active {
+            display: block;
+        }

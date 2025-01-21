@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ağız ve Diş Sağlığı</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+	
+        <!-- Sekmeler -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="hedef-tab" data-toggle="tab" href="#hedef" role="tab" aria-controls="hedef" aria-selected="false">Hedef</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="durum-tab" data-toggle="tab" href="#durum" role="tab" aria-controls="durum" aria-selected="true">Durum</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <!-- Hedef Sekmesi İçeriği -->
+            <div class="tab-pane fade" id="hedef" role="tabpanel" aria-labelledby="hedef-tab">
+                <h4>Yeni Hedef Oluştur</h4>
+                <!-- Hedef Formu -->
+                <form id="hedefForm" action="/hedef-kaydet" method="POST">
+                    <!-- Başlık Alanı -->
+                    <div class="form-group">
+                        <label for="hedefBaslik">Başlık</label>
+                        <input type="text" class="form-control" id="hedefBaslik" name="hedefBaslik" placeholder="Hedef başlığınızı girin" required>
+                    </div>
+
+                    <!-- Açıklama Alanı -->
+                    <div class="form-group">
+                        <label for="hedefAciklama">Açıklama</label>
+                        <textarea class="form-control" id="hedefAciklama" name="hedefAciklama" rows="4" placeholder="Hedefiniz hakkında açıklama yapın..." required></textarea>
+                    </div>
+
+                    <!-- Periyot Alanı -->
+                    <div class="form-group">
+                        <label for="hedefPeriyot">Periyot</label>
+                        <select class="form-control" id="hedefPeriyot" name="hedefPeriyot">
+                            <option value="Günlük">Günlük</option>
+                            <option value="Haftalık">Haftalık</option>
+                            <option value="Aylık">Aylık</option>
+                            <option value="Yıllık">Yıllık</option>
+                        </select>
+                    </div>
+
+                    <!-- Zaman Alanı -->
+                    <div class="form-group">
+                        <label for="hedefZaman">Hedef Tamamlama Zamanı</label>
+                        <input type="date" class="form-control" id="hedefZaman" name="hedefZaman" required>
+                    </div>
+
+                    <!-- Sıklık Alanı -->
+                    <div class="form-group">
+                        <label for="hedefSiklik">Sıklık</label>
+                        <select class="form-control" id="hedefSiklik" name="hedefSiklik">
+                            <option value="Günde 1">Günde 1</option>
+                            <option value="Haftada 1">Haftada 1</option>
+                            <option value="Ayda 1">Ayda 1</option>
+                            <option value="Haftada 2">Haftada 2</option>
+                            <option value="Ayda 2">Ayda 2</option>
+                        </select>
+                    </div>
+
+                    <!-- Önem Derecesi Alanı -->
+                    <div class="form-group">
+                        <label for="hedefOnem">Önem Derecesi</label>
+                        <select class="form-control" id="hedefOnem" name="hedefOnem">
+                            <option value="Düşük">Düşük</option>
+                            <option value="Orta">Orta</option>
+                            <option value="Yüksek">Yüksek</option>
+                        </select>
+                    </div>
+
+                    <!-- Hedefi Kaydet Butonu -->
+                    <button type="submit" class="btn btn-primary">Hedefi Kaydet</button>
+                    <!-- Hedefi Sil Butonu -->
+                    <button type="button" class="btn btn-danger"> Hedefi Sil</button>
+                </form>
+            </div>
+
+            <!-- Durum Sekmesi İçeriği -->
+            <div class="tab-pane fade show active" id="durum" role="tabpanel" aria-labelledby="durum-tab">
+                <h4>Durumunuzu Güncelleyin</h4>
+                <!-- Durum Formu -->
+                <form action="/durum-guncelle" method="POST">
+                    <!-- Hedef Seçimi -->
+                    <div class="form-group">
+                        <label for="hedefSecimi">Hedef Seçin</label>
+                        <select class="form-control" id="hedefSecimi" name="hedefSecimi">
+                            <option>Hedef 1</option>
+                            <option>Hedef 2</option>
+                            <option>Hedef 3</option>
+                        </select>
+                    </div>
+
+                    <!-- Uygulama Tarihi -->
+                    <div class="form-group">
+                        <label for="uygulamaTarihi">Uygulama Tarihi</label>
+                        <input type="date" class="form-control" id="uygulamaTarihi" name="uygulamaTarihi" required>
+                    </div>
+
+                    <!-- Uygulama Süresi -->
+                    <div class="form-group">
+                        <label for="uygulamaSuresi">Uygulama Süresi (Saat)</label>
+                        <input type="number" class="form-control" id="uygulamaSuresi" name="uygulamaSuresi" placeholder="Süreyi saat olarak girin" required>
+                    </div>
+
+                    <!-- Uygulandı Bilgisi -->
+                    <div class="form-group">
+                        <label for="uygulandi">Uygulandı</label>
+                        <select class="form-control" id="uygulandi" name="uygulandi">
+                            <option value="Evet">Evet</option>
+                            <option value="Hayır">Hayır</option>
+                        </select>
+                    </div>
+
+                    <!-- Durum Açıklama Alanı -->
+                    <div class="form-group">
+                        <label for="durumAciklama">Durum Açıklaması</label>
+                        <textarea class="form-control" id="durumAciklama" name="durumAciklama" rows="4" placeholder="Durumunuzu açıklayın..."></textarea>
+                    </div>
+
+                    <!-- Görsel Yükleme Alanı -->
+                    <div class="form-group">
+                        <label for="resimYukle">Görsel Yükleyin (JPEG, PNG)</label>
+                        <input type="file" class="form-control-file" id="resimYukle" name="resimYukle" accept="image/jpeg, image/png">
+                    </div>
+
+                    <!-- Durumun Kaydedilmesi için Buton -->
+                    <button type="submit" class="btn btn-primary">Durumu Kaydet</button>
+                </form>
+
+                <!-- Ağız ve Diş Sağlığı Önerileri  -->
+                <div class="mt-5 text-center">
+                    <h5>Ağız ve Diş Sağlığı Önerileri</h5>
+                    <p>Dişlerinizi günde en az iki kez, florürlü diş macunu ile fırçalayın.</p>
+                    <p>Diş ipi veya arayüz fırçası kullanarak dişlerinizin arasını temizlemeyi unutmayın.</p>
+                    <p>Ağız sağlığınızı korumak için düzenli olarak diş hekimine gidin.</p>
+                    <p>Sert şekerli yiyecekleri sınırlayın ve sağlıklı beslenmeye özen gösterin.</p>
+                    <p>Sigara içmekten kaçının, çünkü sigara dişlerinize zarar verebilir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS ve jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

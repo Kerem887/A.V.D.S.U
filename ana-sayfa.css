@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Genel yapı */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    color: rgb(217, 192, 4);
+}
+
+.container {
+    background: url('bg.jpg');
+    height: 100%;
+    background-size: cover; /* Resmin sayfayı tamamen kaplamasını sağlar */
+    background-position: center; /* Resmi ortalar */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #892b2b;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+
+.navbar .logo {
+    display: inline-block;
+    margin-left: 50px;
+    float: right;
+    padding-right: 30px;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+}
+
+.navbar ul {
+    float: left;
+    margin-right: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 6px 13px;
+}
+
+.navbar ul li.active,
+.navbar ul li a:hover {
+    background-color: orange;
+    border-radius: 2px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center h1 {
+    color: black;
+    font-size: 70px;
+    font-weight: bold;
+    width: 900px;
+}
+
+.center h2 {
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+    width: 885px;
+    margin-top: 10px;
+}
+
+.center button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.center button:hover {
+    background-color: deepskyblue;
+}
+
+/* Typing animation for text */
+.text {
+    font-size: 3.6rem;
+    font-weight: 700;
+    border-right: 0.15em solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end) infinite;
+    color: #FF0000AD;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Alt kısım içerik */
+.bottom-content {
+    text-align: center;
+    position: absolute;
+    bottom: 20px; /* Sayfanın altına yakın bir yer */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.bottom-content h1 {
+    margin: 0;
+}
+
+.bottom-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bottom-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Flex düzeni için */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
