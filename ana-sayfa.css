@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Genel yapı */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    color: rgb(217, 192, 4);
+}
+
+/* Genel yapı */
+.container {
+    background: url('img/bg2.jpg');
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    color: white;
+    box-sizing: border-box;
+    position: relative; /* Container'ı pozisyonlandıracağız */
+}
+
+/* Navbar'ı flexbox kullanarak düzenleme */
+.navbar {
+    width: 100%;
+    height: 52px;
+    background-color: #0077B6;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 0;
+}
+
+/* Navbar menüsü */
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    color: white;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 20px;
+    line-height: 70px;
+}
+
+/* Sayfa içeriği (Resmin üzerine konumlandırma) */
+.content {
+    position: absolute;
+    top: 70px; /* Navbar'ın hemen altına yerleştiriyoruz */
+    left: 0; /* Sol tarafa yaslamak için 0 yapıyoruz */
+    width: 250px; /* İçeriğin genişliği */
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Arka planı şeffaf yapıyoruz */
+    color: white;
+    z-index: 999; /* Navbar'dan sonra üstte görünmesi için */
+    font-weight: bold;
+}
+
+
+/* Bölüm başlıkları */
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+/* Bölüm metinleri */
+.section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* Her bölüm arasındaki boşluk */
+.section {
+    margin-bottom: 30px;
+}
+/* Bağlantı stili */
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Yazı boyutu */
+    padding: 4px 7px;
+    display: flex; /* Metin ve ikonları yan yana dizmek için flexbox kullanıyoruz */
+    align-items: center; /* İkon ve metni dikeyde hizala */
+}
+
+.navbar ul li a i {
+    margin-right: 8px; /* İkon ile metin arasında boşluk bırakmak için */
+    font-size: 22px; /* İkon boyutu */
+}
+
+/* Aktif olan link veya üzerine gelindiğinde renk değiştirme */
+.navbar ul li.active,
+.navbar ul li a:hover {
+    background-color: rgb(195, 131, 53);
+    border-radius:15px;
+    transition: background-color 0.3s ease; /* Hover efekti */
+    
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center h1 {
+    color: black;
+    font-size: 70px;
+    font-weight: bold;
+    width: 900px;
+}
+
+.center h2 {
+    color: green;
+    font-size: 50px;
+    font-weight: bold;
+    width: 885px;
+    margin-top: 10px;
+}
+
+.center button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.center button:hover {
+    background-color: deepskyblue;
+}
+
+/* Typing animation for text */
+.text {
+    font-size: 3.6rem;
+    font-weight: 700;
+    border-right: 0.15em solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end) infinite;
+    color: #FF0000AD;
+	}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+/* Alt kısım içerik öneriler */
+.bottom-content {
+    text-align: center;
+    position: absolute;
+    bottom: 20px; /* Sayfanın altına yakın bir yer */
+    left: 50%; /* Sol tarafa %50 mesafe */
+    transform: translateX(-50%); /* Öğeyi sola doğru kaydırarak tam ortalayacağız */
+    width: 40%; /* Genişlik daha da küçültüldü */
+    padding: 10px 0;
+    color: black;
+    font-size: 0.10rem; /* Yazı boyutunu biraz daha küçülttük */
+}
+
+.bottom-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block; /* Flexbox yerine block düzeni */
+}
+
+.bottom-content ul li {
+    margin-bottom: 6px; /* Öğeler arasına daha az boşluk */
+    background: white;
+    padding: 6px 12px; /* Paddingi küçülttük */
+    margin: 4px 0; /* Öğeler arasına boşluk bıraktık */
+    border-radius: 5px;
+    font-size: 0.9rem; /* Liste öğelerinin yazı boyutunu küçülttük */
+}
+
+
+
+/* Flex düzeni için */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    background: #b1b1b1;
+    color: black;
+    text-align: center;
+    height: 35px;
+    z-index: 100;  /* Bu satırı ekleyin */
+}
+
+
+
+/* Navbar içindeki açıklama için sağ üst köşe konumlandırması */
+.navbar-description {
+    position: absolute;
+    left: 5px; /* Sağdan 20px mesafe */
+    top: 40; /* Navbar ile aynı hizaya getirmek için */
+    font-size: 20px !important; /* Yazı boyutunu büyütüyoruz */
+    color: #fff !important; /* Renk beyaz */
+    padding: 5px 10px; /* İçerik etrafında biraz boşluk ekliyoruz */
+    padding-bottom: 0; /* Yüksekliğini fazla artırmamak için padding-bottom'u 0 yapıyoruz */
+}
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Kayıt Sayfası</title>
+    <link rel="stylesheet" href="style-kullanici-kayit.css">
+</head>
+<body>
+
+
+
+    <div class="container">
+   
+        <form action="register.php" method="POST" onsubmit="return validatePassword()">
+            <div class="form-group">
+                <label for="username">Ad Soyad</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-posta:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" name="password" 
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
+                    title="Şifre en az 8 karakter, bir büyük harf, bir küçük harf ve bir rakam içermelidir."
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Şifreyi Tekrar Girin:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Doğum Tarihi:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <button type="submit" class="submit-btn">Kayıt Ol</button>
+        </form>
+    </div>
+
+    <div class="navbar">
+        <ul>
+            <li>  Ağız Ve Diş Sağlığı Takip Uygulaması </li>
+            
+        </ul>
+
+
+        <div class="footer">
+            <p> Footer </p>
+        </div>
+        
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* Genel sayfa stili */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    background-image: url('img/bg5.jpg'); /* Arka plan resmini buraya ekleyin */
+    background-size: cover; /* Arka plan resmini tam ekran yap */
+    background-position: center; /* Resmi ortala */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    height: 100vh; /* Sayfa yüksekliğini tam ekran yap */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Sayfa içeriğini ortala */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Hafif opak beyaz arka plan */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Diğer stil kurallarınız */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: blue;
+}
+
+/* Hata mesajı stil */
+input:invalid {
+    border-color: #f44336;
+}
+
+input:valid {
+    border-color: #4caf50;
+}
+
+/* Responsif tasarım */
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+.navbar {
+    width: 100%;
+    height: 52px;
+    background-color: #0077B6;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 0;
+}
+
+.navbar ul li {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Yazı boyutu */
+    padding: 4px 7px;
+    display: flex; /* Metin ve ikonları yan yana dizmek için flexbox kullanıyoruz */
+    align-items: center; /* İkon ve metni dikeyde hizala */
+}
+
+.footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    background: #b1b1b1;
+    color: black;
+    text-align: center;
+    height: 35px;
+    z-index: 100;  /* Bu satırı ekleyin */
+}
